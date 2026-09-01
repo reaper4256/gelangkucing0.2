@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Custom Color */
+      :root {
+        --preload-background: #f6f6e2;
+
+        --btn-background: #805557;
+        --btn-color: #fff;
+
+        --popup-background: #f6f6e2;
+        --popup-text-color: #3c3c3c;
+
+        --nav-top-background: #f3e0a8;
+        --nav-title-color: #ae9835;
+
+        --nav-list-background: #fff;
+        --nav-list-color: #3c3c3c;
+        --nav-list-active-color: #ae9835;
+      }
+    </style>
+    <title>Special For You</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-top">
+        <a href="#" class="nav-title">Happy Birthday</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+
+      <ul class="navlist">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../memories.html">Memories</a></li>
+        <li><a href="../birthdayWishmimi.html">birthdaywish</a></li>
+      </ul>
+    </header>
+
+    <div class="preload">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="main" style="top: 65px; background-image: url(&quot;https://dekatutorial.github.io/v/scrbk/bg.webp&quot;)">
+      <div class="elements" style="top: 65px">
+        <img src="https://dekatutorial.github.io/v/scrbk/bg2.webp" class="bg" />
+        <div class="butterfly">
+          <img src="https://dekatutorial.github.io/v/scrbk/butterfly.webp" />
+        </div>
+        <img src="https://dekatutorial.github.io/v/scrbk/flower.webp" class="flower" />
+      </div>
+
+      <div class="book-container">
+        <div class="book fs"></div>
+      </div>
+
+      <div class="btn-container">
+        <button class="open-btn show">Open</button>
+        <div class="nav">
+          <button class="prev-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+            </svg>
+          </button>
+          <button class="next-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+            </svg>
+          </button>
+        </div>
+        <button class="pesan-btn">Kirim Pesan</button>
+      </div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // Masukkan nama file gambar halaman didalam kutip, kalau mau tambah ikutin seperti contoh format
+      konten = [
+        "p0.png",
+        "p1.png",
+        "p2.png",
+        "p3.png",
+        "p4.png",
+        "p5.png",
+        "p6.png",
+        "p7.png",
+        "p8.png",
+        "p9.png",
+        "p10.png",
+        "p11.png",
+        "p12.png",
+        "p13.png",
+        
+      ];
+
+      // Edit sesuai tutorial
+      video = [];
+
+      btnPlayText = "Play Video";
+      btnFullscreenText = "Fullscreen";
+
+      // Masukkan nama file musik
+      musik = "scs.mp3";
+
+      // Jika mau muncul tombol kirim pesan isi true, jika ingin tidak muncul isi false
+      tampilKirimPesan = false;
+
+      // [Optional] Masukan nomor whatsapp diawali kode negara, kalo indonesia diawali 62
+      nomorWhatsapp = "";
+
+      // Suara klik tombol, jika ingin silent ganti true dengan false
+      isKlikAudio = true;
+
+      const swalo = Swal.mixin({ allowOutsideClick: false, reverseButtons: true });
+      async function kirimPesan() {
+        if (isKlikAudio) klikA.play();
+        const { value: pesan } = await swalo.fire({ title: "Tulis pesan", input: "textarea", confirmButtonText: "Kirim" });
+        if (isKlikAudio) klikA.play();
+        if (pesan) {
+          await swalo.fire({ title: "Kirim pesannya ke wa ya" });
+          location.assign(`https://wa.me/${nomorWhatsapp}?text=${pesan}`);
+        } else {
+          await swalo.fire({ title: "Jangan dikosongin ya :)" });
+          kirimPesan();
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
