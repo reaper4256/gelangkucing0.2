@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special For You</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="preload">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="video-container">
+      <!-- VIDEO 1 -->
+      <video
+        id="video1"
+        class="video-item active"
+        src="video-1.mp4"
+        preload="auto"
+        playsinline
+        webkit-playsinline
+      ></video>
+
+      <!-- VIDEO 2 -->
+      <video
+        id="video2"
+        class="video-item"
+        src="video-2.mp4"
+        preload="auto"
+        playsinline
+        webkit-playsinline
+      ></video>
+
+      <!-- VIDEO 3 -->
+      <video
+        id="video3"
+        class="video-item"
+        src="video-3.mp4"
+        preload="auto"
+        playsinline
+        webkit-playsinline
+      ></video>
+
+      <!-- VIDEO 4 -->
+      <video
+        id="video4"
+        class="video-item"
+        src="video-4.mp4"
+        preload="auto"
+        playsinline
+        webkit-playsinline
+      ></video>
+      <div class="tap-area" id="tapArea"></div>
+
+      <p class="hint hint1 show">Tap Screen</p>
+      <p class="hint hint2">Tap Again</p>
+      <button class="btn btn-next">Next</button>
+    </div>
+
+    <script>
+      
+     function navigateNext() {
+      window.location.href =("finaldis/index.html"); // Replace with your target URL
+    }
+
+      
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
